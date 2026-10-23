@@ -155,6 +155,22 @@ function calcularIva (producto) {
 }
 console.log(calcularIva(100)); */
 
+let hora = 2
+if(hora > 0 && hora < 6){
+    console.log("Es de madrugada")
+}
+else if (hora < 12){
+    console.log('Es la mañana')
+}
+else if(hora === 12){
+    console.log('Es mediodia')
+}
+else if (hora < 18){
+    console.log('Es la tarde')
+}
+else if (hora < 24){
+    console.log('Es la noche')
+}
 
 /* 
 - Dado un numero de dia ustedes deben decir por consola que dia es
