@@ -165,7 +165,7 @@ else if (hora < 12){
 else if(hora === 12){
     console.log('Es mediodia')
 }
-else if (hora < 18){
+else if (hora < 19){
     console.log('Es la tarde')
 }
 else if (hora < 24){
@@ -177,7 +177,34 @@ else if (hora < 24){
 1 = lunes
 2 = martes (...etc)
 */
-let dia_seleccionado = 3
+//let dia_seleccionado = 7
 
 //Ejemplo de mensaje
 //console.log('El dia de la semana es miercoles')
+
+
+
+
+/* const dias_semana = [
+  "lunes",
+  "martes",
+  "miercoles",
+  "jueves",
+  "viernes",
+  "sabado",
+  "domingo",
+];
+
+let dia_seleccionado = 4;
+if (dia_seleccionado > 1 && dia_seleccionado < 7) {
+    let nombre_dia = dias_semana[dia_seleccionado - 1];
+    console.log("El dia de la semana es", nombre_dia);
+}
+
+ */
+
+const dia_sem = ["lunes", "martes", "miercoles", "jueves", "viernes", 'sabado', 'domingo'];
+let dia_seleccionado = 1;
+console.log("El día de la semana es " + dia_sem[dia_seleccionado - 1])
+
+console.log(dia_sem)
