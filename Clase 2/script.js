@@ -77,13 +77,13 @@ function cumplirAños(){
 } */
 
 
-const nombres = ['pepe', 'maria', 'jose']
+//const nombres = ['pepe', 'maria', 'jose']
 
 //metodos de array: Sirven para hacer acciones con los arrays
 //JS los define, por ende son nativos
 
 //Agrega al final de la lista a 'juan'
-nombres.push('juan')
+//nombres.push('juan')
 
 //indexOf -> traer el indice de cierto elemento
 
@@ -122,7 +122,7 @@ nombres.push('juan')
 
 //agregar a 'julieta' donde esta jose
 
-for(let nombre of nombres){
+/* for(let nombre of nombres){
     if(nombre === 'jose'){
         let indice_jose = nombres.indexOf(nombre)
         nombres.splice(indice_jose, 0, 'julieta')
@@ -131,4 +131,37 @@ for(let nombre of nombres){
     
 }
 
-console.log(nombres)
+console.log(nombres) */
+
+
+/* 
+la funcion sumar recibe a 2 numeros y devuelve la suma de ellos
+*/
+function sumar (a, b){
+    return a + b
+}
+
+console.log(sumar(1, 1))
+
+/* 
+- Crear la funcion calcularIva que reciba el precio por parametro y retorne el valor del iva. (asumiendo que el iva es 21% del precio)
+*/
+
+/* const iva = 0.21;
+
+function calcularIva (producto) {
+    
+    return producto * iva;
+}
+console.log(calcularIva(100)); */
+
+
+/* 
+- Dado un numero de dia ustedes deben decir por consola que dia es
+1 = lunes
+2 = martes (...etc)
+*/
+let dia_seleccionado = 3
+
+//Ejemplo de mensaje
+//console.log('El dia de la semana es miercoles')
