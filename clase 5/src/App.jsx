@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import EstaPrendidoBoton from './Components/EstaPrendidoBoton/EstaPrendidoBoton'
+import Contador from './Components/Contador/Contador'
 
 export default function App() {
 
@@ -60,6 +61,7 @@ export default function App() {
         <button type='submit'>Dar de alta</button>
       </form>
 
+      <Contador/>
 
       <h2>Lista de productos:</h2>
       {listado_productos_jsx}

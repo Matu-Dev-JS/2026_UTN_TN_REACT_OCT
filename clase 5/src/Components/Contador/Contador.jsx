@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import './Contador.css'
+
 function Contador() {
     /* 
   ESTADOS de react
@@ -29,8 +32,10 @@ function Contador() {
     return (
         <div>
             <span>{contador_valor}</span>
-            <button onClick={incrementarContador}>+</button>
+            <button className='btn-incrementar' onClick={incrementarContador}>+</button>
         </div>
     )
 
 }
+
+export default Contador
