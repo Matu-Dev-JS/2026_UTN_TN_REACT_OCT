@@ -30,12 +30,25 @@ export default function App() {
 
   }
 
-  console.log("me renderizo")
+  const estaPrendidoEstado = useState(true)
+  const estaPrendidoValor = estaPrendidoEstado[0]
+  const setEstaPrendido = estaPrendidoEstado[1]
+
+  function alternarEstaPrendido (){
+    setEstaPrendido(!estaPrendidoValor)
+  }
   return (
     <div>
       <h1 className='titulo'>Hola mundo</h1>
       <span>{contador_valor}</span>
       <button onClick={incrementarContador}>+</button>
+
+
+      {
+        estaPrendidoValor 
+        ? <button onClick={alternarEstaPrendido}>Prendido</button>
+        : <button onClick={alternarEstaPrendido}>Apagado</button>
+      }
     </div>
   )
 }
