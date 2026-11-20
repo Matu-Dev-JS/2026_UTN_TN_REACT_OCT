@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import EstaPrendidoBoton from './Components/EstaPrendidoBoton/EstaPrendidoBoton'
 import Contador from './Components/Contador/Contador'
 
@@ -43,7 +43,14 @@ export default function App() {
     - resolved Resuelto: Cuando la operacion se logro resolver correctamente
     - reject Rechazado: Cuando la operacion no se logro completar (hubo un error)
   */
+
+  const [response, setResponse] = useState(null)
+  const [loading, setLoading] = useState(false)
+
   async function traerUsuarios(){
+
+    setLoading(true)
+    setResponse(null)
     const response_HTTP = await fetch(
       'https://jsonplaceholder.typicode.com/users', 
       {
@@ -52,16 +59,57 @@ export default function App() {
     )
   
     const result = await response_HTTP.json()
-    console.log(result)
+    setLoading(false)
+    setResponse(result)
   }
 
+  /* 
+  useState => Controla la recarga de un componente
+  useEffect => Controla la recarga de una funcion
+  Recibe 2 parametros:
+    1. La funcion/Efecto a controlar
+    2. el array de dependencias (si es [] significa que ejecuta 1 sola vez)
+  */
+  useEffect(
+    //El efecto
+    () => { 
+      traerUsuarios()
+    },
+    // Dependencias Significa que se ejecuta 1 sola vez el efecto
+    [] 
+  )
+  
 
-  traerUsuarios()
+  console.log({response, loading})
+
+
 
 
   return (
     <div>
       <h1>Hola mundo</h1>
+      {
+        loading 
+        ? <span>Cargando...</span>
+        : <div>
+          {
+            response.length === 0
+            ? <span>Lista vacia</span>
+            : <div>
+              {response.map((user) => {
+                return (
+                  <div key={user.id}>
+                    <span>ID: #{user.id}</span>
+                    <h2>Nombre: {user.name}</h2>
+                    <span>Email: {user.email}</span>
+                    <hr/>
+                  </div>
+                )
+              })}
+            </div>
+          }
+        </div>
+      }
     </div>
   )
 }
